@@ -28,13 +28,13 @@ error_reporting(E_ALL);
                     <nav class="">
                         <ul class="d-flex m-0 list-unstyled  ">
                             <li class="ml-4 ">
-                                <a class="" href="./index.html">Listings</a>
+                                <a class="" href="./index.php">Listings</a>
                             </li>
                             <li class="ml-4">
-                                <a href="./client.html">Ajouter Client</a>
+                                <a href="./client.php">Ajouter Client</a>
                             </li>
                             <li class="ml-4">
-                                <a href="./entreprise.html">Ajouter Entreprise</a>
+                                <a href="./entreprise.php">Ajouter Entreprise</a>
                             </li>
                         </ul>
                     </nav>
@@ -80,7 +80,7 @@ error_reporting(E_ALL);
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse-<?php echo $row["id"]?>" aria-expanded="true" aria-controls="collapse-<?php echo $row["id"]?>">
-                                    <?php echo $row["prenom"]." ".$row["nom"] ?>
+                                    <?php echo utf8_encode($row["prenom"]." ".$row["nom"]) ?>
                                 </button>
                             </h2>
                         </div>
@@ -101,7 +101,7 @@ error_reporting(E_ALL);
                                                     <div class="col-6">
                                                         <h5 class="card-title m-0 text-left"><?php echo $row["prenom"]." ".$row["nom"] ?></h5>
                                                     </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
+                                                    <div class="col-6"><a href="./client.php?id=<?php echo $row["id"] ?>"><i class="fas fa-edit"></i></a><i
                                                             class="fas fa-trash-alt"></i></div>
                                                 </div>
                                                 <p class="card-text m-0 mr-5"><?php echo $row["description"]."</br>".$row["adresse_client"];?></p>
@@ -135,88 +135,6 @@ error_reporting(E_ALL);
                     }
 
                     ?>
-                    <!-- <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Alban Tiberghien
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-2">
-                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="row text-right">
-
-                                                    <div class="col-6">
-                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
-                                                    </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
-                                                            class="fas fa-trash-alt"></i></div>
-                                                </div>
-                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
-                                                    below as a
-                                                    natural lead-in to additional content. This content is a little bit
-                                                    longer.</p>
-                                                <p class="card-text m-0"><small class="text-muted"><a href="#">Irish
-                                                            Pub</a></small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Toto Youpi
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-2">
-                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="row text-right">
-
-                                                    <div class="col-6">
-                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
-                                                    </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
-                                                            class="fas fa-trash-alt"></i></div>
-                                                </div>
-                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
-                                                    below as a
-                                                    natural lead-in to additional content. This content is a little bit
-                                                    longer.</p>
-                                                <p class="card-text m-0"><small class="text-muted"><a href="#">Irish
-                                                            Pub</a></small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 
 
@@ -255,7 +173,7 @@ error_reporting(E_ALL);
                                                     <div class="col-6">
                                                         <h5 class="card-title m-0 text-left"><?php echo $row["nom"]?></h5>
                                                     </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
+                                                    <div class="col-6"><a href="./entreprise.php?id=<?php echo $row["id"]; ?>"><i class="fas fa-edit"></i></a><i
                                                             class="fas fa-trash-alt"></i></div>
                                                 </div>
                                                 <p class="card-text m-0 mr-5"><?php echo $row["description"]."</br>".$row["adresse"];?></p>

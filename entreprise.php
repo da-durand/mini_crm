@@ -18,13 +18,13 @@
                 <nav class="">
                     <ul class="d-flex m-0 list-unstyled  ">
                         <li class="ml-4 ">
-                            <a class="" href="./index.html">Listings</a>
+                            <a class="" href="./index.php">Listings</a>
                         </li>
                         <li class="ml-4">
-                            <a href="./client.html">Ajouter Client</a>
+                            <a href="./client.php">Ajouter Client</a>
                         </li>
                         <li class="ml-4">
-                            <a href="./entreprise.html">Ajouter Entreprise</a>
+                            <a href="./entreprise.php">Ajouter Entreprise</a>
                         </li>
                     </ul>
                 </nav>
@@ -36,24 +36,18 @@
     <div class="container m-auto p-0">
         <h2 class="text-center">Mise à jour de Thibault De Tourdonnet</h2>
         <form action="" method="POST">
-            <div class="row no-gutters">
-                <div class="col-6 pr-5">
-                    <input type="text" name="firstname" id="firstname" value="" placeholder="Prénom" class="w-100">
-                </div>
-                <div class="col-6">
-                    <input type="text" name="lastname" id="lastname" value="" placeholder="Nom" class="w-100">
-                </div>
-                <div class="col-12">
-                    <input type="text" name="adress" id="adress" value="" placeholder="Adresse" class="w-100">
-                </div>
-                <div class="col-6 pr-5">
-                    <select name="enteprise" id="enterprise" class="w-100">
-                        <option value="num-coop">Num'n Coop</option>
-                    </select>
-                </div>
-                <div class="col-6">
-                    <button class="btn btn-primary" type="submit">Enregistrer</button>
-                </div>
+            <div>
+                <input type="text" name="name" id="name" value="" placeholder="Dénomination" class="w-100">
+            </div>
+            <div>
+                <textarea name="description" id="description" cols="30" rows="5" class="w-100"></textarea>
+            </div>
+            <div>
+                <input type="text" name="adresse" id="adresse" value="" placeholder="Adresse complète" class="w-100">
+
+
+                <button class="btn btn-primary" type="submit">Enregistrer</button>
+
             </div>
         </form>
     </div>
