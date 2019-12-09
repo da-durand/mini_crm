@@ -13,96 +13,174 @@
 
 <body>
     <div class="container-fluid p-0">
-        <header class="d-flex">
-            <h1>My mini CRM</h1>
-            <nav>
-                <ul class="d-flex m-0 list-unstyled">
-                    <li>
-                        <a href="#">Listings</a>
-                    </li>
-                    <li>
-                        <a href="#">Ajouter Client</a>
-                    </li>
-                    <li>
-                        <a href="#">Ajouter Entreprise</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="container">
-                <h2>Listing clients/entreprises</h2>
-                <div class="row">
-                    <div class="col-6"><button>Clients (3)</button></div>
-                    <div class="col-6"><button>Entreprises (4)</button></div>
-                    <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                              <a class="nav-link active" href="#">Active</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                            </li>
-                          </ul>
+        <header class="d-flex bg-secondary text-light">
+            <div class="row no-gutters text-left w-100">
+                <div class="col-6">
+                    <h2 class="m-0 h-1">My mini CRM</h2>
                 </div>
-                <div class="row">
-                    <div class="col-10">
-                        <input type="text" name="search" id="search" placeholder="Recherche..">
-                    </div>
-                    <div class="col-2 d-flex">
-                        <button>chercher</button>
-                        <button>annuler</button>
-                    </div>
+                <div class="col-6 d-flex  align-items-center">
+                    <nav class="">
+                        <ul class="d-flex m-0 list-unstyled  ">
+                            <li class="ml-4 ">
+                                <a class="" href="#">Listings</a>
+                            </li>
+                            <li class="ml-4">
+                                <a href="#">Ajouter Client</a>
+                            </li>
+                            <li class="ml-4">
+                                <a href="#">Ajouter Entreprise</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-
             </div>
 
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                Thibault De Tourdonnet
-                            </button>
-                        </h2>
+
+        </header>
+        <main>
+            <div class="container p-0 m-auto ">
+                <h2 class="text-center">Listing clients/entreprises</h2>
+                <div class="row no-gutters mb-4">
+                    <!-- <div class="col-6"><button>Clients (3)</button></div>
+                    <div class="col-6"><button>Entreprises (4)</button></div> -->
+                    <ul class="nav nav-tabs w-100">
+                        <li class="nav-item w-50">
+                            <a class="nav-link active btn btn-primary px-0" href="#"> Clients</a>
+                        </li>
+                        <li class="nav-item w-50">
+                            <a class="nav-link btn btn-primary w-100" href="#">Entreprises</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="row no-gutters mb-4 ">
+                    <div class="col-8">
+                        <input class="w-100 h-100" type="text" name="search" id="search" placeholder="Recherche..">
                     </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-
-                        </div>
+                    <div class="col-4 d-flex w-100">
+                        <button class="btn btn-primary flex-grow-1 px-5 "><i class="fas fa-search"></i></button>
+                        <button class="btn btn-primary flex-grow-1 px-5 "><i class="fas fa-ban "></i></button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Alban Tiberghien
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="card">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="..." class="card-img" alt="...">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Thibault De Tourdonnet
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <div class="row text-right">
+
+                                                    <div class="col-6">
+                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
+                                                    </div>
+                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
+                                                            class="fas fa-trash-alt"></i></div>
+                                                </div>
+                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
+                                                    below as a
+                                                    natural lead-in to additional content. This content is a little bit
+                                                    longer.</p>
+                                                <p class="card-text m-0"><small class="text-muted"><a href="#">Irish
+                                                            Pub</a></small></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title m-0">Alban Tiberghien</h5>
-                                            <p class="card-text m-0">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text m-0"><small class="text-muted"><a href="#">Irish Pub</a></small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Alban Tiberghien
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <div class="row text-right">
+
+                                                    <div class="col-6">
+                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
+                                                    </div>
+                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
+                                                            class="fas fa-trash-alt"></i></div>
+                                                </div>
+                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
+                                                    below as a
+                                                    natural lead-in to additional content. This content is a little bit
+                                                    longer.</p>
+                                                <p class="card-text m-0"><small class="text-muted"><a href="#">Irish
+                                                            Pub</a></small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Toto Youpi
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <div class="row text-right">
+
+                                                    <div class="col-6">
+                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
+                                                    </div>
+                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
+                                                            class="fas fa-trash-alt"></i></div>
+                                                </div>
+                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
+                                                    below as a
+                                                    natural lead-in to additional content. This content is a little bit
+                                                    longer.</p>
+                                                <p class="card-text m-0"><small class="text-muted"><a href="#">Irish
+                                                            Pub</a></small></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -110,23 +188,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Toto Youpi
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-
-                        </div>
-                    </div>
-                </div>
             </div>
+
+
         </main>
     </div>
 </body>
