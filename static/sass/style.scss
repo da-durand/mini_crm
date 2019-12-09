@@ -1,0 +1,45 @@
+nav{
+    ul{
+
+        li:first-child{
+            a{
+                color: white;
+            }
+        }
+
+        a{
+            text-decoration: none;
+            color: rgb(184, 184, 184);
+        }
+    }
+}
+
+.nav-page, .search{
+
+    .btn{
+        color: white;
+        text-decoration: none;
+        border: none;
+        background: purple;
+    }
+}
+
+.accordion{
+    i, button, a{
+        color: purple;
+    }
+
+    img{
+        border-radius: 0;
+    }
+}
+
+form{
+    input{
+        margin-bottom: .5em;
+    }
+
+    select{
+        height: 100%;
+    }
+}

@@ -1,0 +1,64 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="d-flex bg-secondary text-light p-3">
+        <div class="row no-gutters text-left w-100">
+            <div class="col-6">
+                <h1 class="m-0 h5">My mini CRM</h1>
+            </div>
+            <div class="col-6 d-flex  align-items-center">
+                <nav class="">
+                    <ul class="d-flex m-0 list-unstyled  ">
+                        <li class="ml-4 ">
+                            <a class="" href="./index.html">Listings</a>
+                        </li>
+                        <li class="ml-4">
+                            <a href="./client.html">Ajouter Client</a>
+                        </li>
+                        <li class="ml-4">
+                            <a href="./entreprise.html">Ajouter Entreprise</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+    </header>
+    <div class="container m-auto p-0">
+        <h2 class="text-center">Mise à jour de Thibault De Tourdonnet</h2>
+        <form action="" method="POST">
+            <div class="row no-gutters">
+                <div class="col-6 pr-5">
+                    <input type="text" name="firstname" id="firstname" value="" placeholder="Prénom" class="w-100">
+                </div>
+                <div class="col-6">
+                    <input type="text" name="lastname" id="lastname" value="" placeholder="Nom" class="w-100">
+                </div>
+                <div class="col-12">
+                    <input type="text" name="adress" id="adress" value="" placeholder="Adresse" class="w-100">
+                </div>
+                <div class="col-6 pr-5">
+                    <select name="enteprise" id="enterprise" class="w-100">
+                        <option value="num-coop">Num'n Coop</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary" type="submit">Enregistrer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</html>

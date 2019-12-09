@@ -1,3 +1,23 @@
+nav ul li:first-child a {
+  color: white; }
+nav ul a {
+  text-decoration: none;
+  color: #b8b8b8; }
 
+.nav-page .btn, .search .btn {
+  color: white;
+  text-decoration: none;
+  border: none;
+  background: purple; }
+
+.accordion i, .accordion button, .accordion a {
+  color: purple; }
+.accordion img {
+  border-radius: 0; }
+
+form input {
+  margin-bottom: .5em; }
+form select {
+  height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
