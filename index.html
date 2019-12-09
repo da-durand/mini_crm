@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header class="d-flex">
+            <h1>My mini CRM</h1>
+            <nav>
+                <ul class="d-flex m-0 list-unstyled">
+                    <li>
+                        <a href="#">Listings</a>
+                    </li>
+                    <li>
+                        <a href="#">Ajouter Client</a>
+                    </li>
+                    <li>
+                        <a href="#">Ajouter Entreprise</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h2>Listing clients/entreprises</h2>
+                <div class="row">
+                    <div class="col-6"><button>Clients (3)</button></div>
+                    <div class="col-6"><button>Entreprises (4)</button></div>
+                    <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                          </ul>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" name="search" id="search" placeholder="Recherche..">
+                    </div>
+                    <div class="col-2 d-flex">
+                        <button>chercher</button>
+                        <button>annuler</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Thibault De Tourdonnet
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Alban Tiberghien
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="card">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="..." class="card-img" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title m-0">Alban Tiberghien</h5>
+                                            <p class="card-text m-0">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text m-0"><small class="text-muted"><a href="#">Irish Pub</a></small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Toto Youpi
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</html>
