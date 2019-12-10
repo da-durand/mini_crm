@@ -242,7 +242,7 @@ error_reporting(E_ALL);
             console.log(thisId);
             $("#card-"+thisId["id_client"]).remove()
 
-
+        return false;
             
     })
     $(".deleteEnt").click(function(){
@@ -251,6 +251,7 @@ error_reporting(E_ALL);
             console.log(thisId);
             $("#cardEnt-"+thisId["id_entreprise"]).remove()
 
+            return false;
 
             
     })

@@ -10,6 +10,7 @@ $client = [
     "prenom"=>"",
     "adresse_client"=>"",
     "description"=>"",
+    "entreprise"=>"",
 ];
 
 
@@ -19,6 +20,16 @@ if($_POST != false && $_GET == false){
         
     $newline->execute([$_POST["lastname"], $_POST["firstname"], $_POST["adress"], $_POST["description"]]);
     
+    $newline2 = $db->prepare("INSERT INTO appartient (entreprise_id, client_id) VALUES (?, ?)");
+
+    $idEnt = str_replace("choice-", "", $_POST["entreprise"]);
+    
+    var_dump($idEnt);
+
+    $lastClientId = $db->query("SELECT * FROM client WHERE id=LAST_INSERT_ID()");
+    $lastClientId = $lastClientId->fetch();
+
+    $newline2->execute([$idEnt, $lastClientId["id"]]);
     
 }
 
@@ -30,6 +41,12 @@ if($_GET != false){
         
         $upline->execute([$_POST["lastname"], $_POST["firstname"], $_POST["adress"], $_POST["description"], $_GET["id"]]);
         
+        $upline2 = $db->prepare("INSERT INTO appartient (entreprise_id, client_id) VALUES (?, ?)");
+
+        $idEnt = str_replace("choice-", "", $_POST["entreprise"]);
+
+        $upline2->execute([$idEnt, $_GET["id"]]);
+
         
     }
     
@@ -91,17 +108,17 @@ if($_GET != false){
                 <div class="col-12">
                     <input type="text" name="adress" id="adress" value="<?php echo $client["adresse_client"] ?>" placeholder="Adresse" class="w-100">
                 </div>
-                <div class="col-12">
+                <div class="col-12 mb-2">
                     <textarea name="description" id="description" cols="30" rows="10" class="w-100"><?php echo $client["description"] ?></textarea>
                 </div>
                 <div class="col-6 pr-5">
-                    <select name="enteprise" id="enterprise" class="w-100">
+                    <select name="entreprise" id="entreprise" class="w-100">
                         <?php 
 
                         $job_list = $db->query("SELECT * FROM entreprise");
                         foreach ($job_list as $row){
                         ?>
-                        <option value="choice-<?php $row["id"]; ?>"><?php echo $row["nom"]; ?></option>
+                        <option value="choice-<?php echo $row["id"]; ?>"><?php echo $row["nom"]; ?></option>
                         <?php
                         }
                         ?>

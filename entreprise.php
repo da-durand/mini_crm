@@ -81,7 +81,7 @@ if($_GET != false){
             <div>
                 <input type="text" name="name" id="name" value="<?php echo $entreprise["nom"] ?>" placeholder="Dénomination" class="w-100">
             </div>
-            <div>
+            <div class="mb-2">
                 <textarea name="description" id="description" cols="30" rows="5" class="w-100"><?php echo $entreprise["description"] ;?></textarea>
             </div>
             <div>
