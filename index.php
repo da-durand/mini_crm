@@ -75,7 +75,7 @@ error_reporting(E_ALL);
                     $req = $req->fetchAll();
                     foreach($req as $row) {
                 ?>
-                <div class="card">
+                <div id="card-<?php echo $row["id"]?>" class="card">
                         <div class="card-header" id="heading-<?php echo $row["id"]?>">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
@@ -101,8 +101,12 @@ error_reporting(E_ALL);
                                                     <div class="col-6">
                                                         <h5 class="card-title m-0 text-left"><?php echo $row["prenom"]." ".$row["nom"] ?></h5>
                                                     </div>
-                                                    <div class="col-6"><a href="./client.php?id=<?php echo $row["id"] ?>"><i class="fas fa-edit"></i></a><i
-                                                            class="fas fa-trash-alt"></i></div>
+                                                    <div class="col-6"> 
+                                                        <a href="./client.php?id=<?php echo $row["id"] ?>"><i class="fas fa-edit"></i></a>
+                                                        <a href="#" class="delete" id="delete-<?php echo $row["id"] ?>"><i class="fas fa-trash-alt"></a></i>
+                                                    </div>
+                                                    
+
                                                 </div>
                                                 <p class="card-text m-0 mr-5"><?php echo $row["description"]."</br>".$row["adresse_client"];?></p>
                                                 <ul class="card-text m-0">
@@ -147,7 +151,7 @@ error_reporting(E_ALL);
                         $req = $req->fetchAll();
                         foreach($req as $row) {
                     ?>
-                    <div class="card">
+                    <div id="cardEnt-<?php echo $row["id"]?>" class="card">
                         <div class="card-header" id="heading2-<?php echo $row["id"]?>">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
@@ -173,15 +177,16 @@ error_reporting(E_ALL);
                                                     <div class="col-6">
                                                         <h5 class="card-title m-0 text-left"><?php echo $row["nom"]?></h5>
                                                     </div>
-                                                    <div class="col-6"><a href="./entreprise.php?id=<?php echo $row["id"]; ?>"><i class="fas fa-edit"></i></a><i
-                                                            class="fas fa-trash-alt"></i></div>
+                                                    <div class="col-6"><a href="./entreprise.php?id=<?php echo $row["id"]; ?>"><i class="fas fa-edit"></i></a>
+                                                    <a href="#" class="deleteEnt" id="deleteEnt-<?php echo $row["id"] ?>"><i class="fas fa-trash-alt"></a></i>
+                                                    </div>
                                                 </div>
                                                 <p class="card-text m-0 mr-5"><?php echo $row["description"]."</br>".$row["adresse"];?></p>
                                                 <ul class="card-text m-0">
                                                     <?php
                                                         $reqEntreprise = $db->query('SELECT * FROM appartient WHERE entreprise_id ='.$row["id"]);
                                                         foreach($reqEntreprise as $row2) {
-                                                            // $reqEntreprise = $reqEntreprise->fetchAll();
+                                                            
                                                             $reqNomEnt = $db->query('SELECT * FROM client WHERE id ='.$row2["client_id"]);
                                                             $reqNomEnt = $reqNomEnt->fetch();
                                                     ?>
@@ -205,135 +210,7 @@ error_reporting(E_ALL);
                         <?php
                         }
                         ?>
-                    <!-- </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Maire de Mende
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample-2">
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-2">
-                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="row text-right">
-
-                                                    <div class="col-6">
-                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
-                                                    </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
-                                                            class="fas fa-trash-alt"></i></div>
-                                                </div>
-                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
-                                                    below as a
-                                                    natural lead-in to additional content. This content is a little bit
-                                                    longer.</p>
-                                                <ul>
-                                                    <li>Alban Tiberghien</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Conseil départemental de la Lozère
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample-2">
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-2">
-                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="row text-right">
-
-                                                    <div class="col-6">
-                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
-                                                    </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
-                                                            class="fas fa-trash-alt"></i></div>
-                                                </div>
-                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
-                                                    below as a
-                                                    natural lead-in to additional content. This content is a little bit
-                                                    longer.</p>
-                                                <ul>
-                                                    <li>Alban Tiberghien</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header" id="headingFour">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Irish Pub
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                            data-parent="#accordionExample-2">
-                            <div class="card-body">
-                                <div class="card">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-2">
-                                            <img src="https://picsum.photos/id/834/100/100" class="card-img w-100"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="row text-right">
-
-                                                    <div class="col-6">
-                                                        <h5 class="card-title m-0 text-left">Alban Tiberghien</h5>
-                                                    </div>
-                                                    <div class="col-6"><i class="fas fa-edit"></i> <i
-                                                            class="fas fa-trash-alt"></i></div>
-                                                </div>
-                                                <p class="card-text m-0 mr-5">This is a wider card with supporting text
-                                                    below as a
-                                                    natural lead-in to additional content. This content is a little bit
-                                                    longer.</p>
-                                                <ul>
-                                                    <li>Alban Tiberghien</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                    
             </div>
 
 
@@ -345,3 +222,37 @@ error_reporting(E_ALL);
 <script src="./static/js/script.js"></script>
 
 </html>
+
+<!-- <script>
+    $(".delete").click(function(){
+            var thisId = {"id_client" : parseInt($(this).attr("id").replace("delete-",""))}
+            $.post("delete.php",thisId,function(){})
+            console.log(thisId);
+            $("#card-"+thisId["id_client"]).remove()
+
+
+            
+    })
+
+</script> -->
+<script>
+    $(".delete").click(function(){
+            var thisId = {"id_client" : parseInt($(this).attr("id").replace("delete-",""))}
+            $.post("delete.php",thisId,function(){})
+            console.log(thisId);
+            $("#card-"+thisId["id_client"]).remove()
+
+
+            
+    })
+    $(".deleteEnt").click(function(){
+            var thisId = {"id_entreprise" : parseInt($(this).attr("id").replace("deleteEnt-",""))}
+            $.post("delete.php",thisId,function(){})
+            console.log(thisId);
+            $("#cardEnt-"+thisId["id_entreprise"]).remove()
+
+
+            
+    })
+
+</script>
